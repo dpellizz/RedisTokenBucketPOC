@@ -1,0 +1,74 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/dpellizz/Repository/RedisTokenBucketPOC/RedisTokenBucketPOC.csproj": {}
+  },
+  "projects": {
+    "/Users/dpellizz/Repository/RedisTokenBucketPOC/RedisTokenBucketPOC.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/dpellizz/Repository/RedisTokenBucketPOC/RedisTokenBucketPOC.csproj",
+        "projectName": "RedisTokenBucketPOC",
+        "projectPath": "/Users/dpellizz/Repository/RedisTokenBucketPOC/RedisTokenBucketPOC.csproj",
+        "packagesPath": "/Users/dpellizz/.nuget/packages/",
+        "outputPath": "/Users/dpellizz/Repository/RedisTokenBucketPOC/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/dpellizz/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "/opt/homebrew/Cellar/dotnet/9.0.0/libexec/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.9.11, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/opt/homebrew/Cellar/dotnet/9.0.0/libexec/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
