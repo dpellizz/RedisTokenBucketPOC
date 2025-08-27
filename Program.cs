@@ -11,9 +11,9 @@ var db = redis.GetDatabase();
 var bucket = new TokenBucket(
     db,
     "token_bucket",
-    capacity: 100,
-    refillTokens: 100,
-    refillInterval:TimeSpan.FromSeconds(2000)
+    capacity: 10,
+    refillTokens: 10,
+    refillInterval:TimeSpan.FromSeconds(30)
 );
 
 // Start a background task to refill the bucket at the specified interval
