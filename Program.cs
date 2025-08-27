@@ -13,9 +13,9 @@ try
     var bucket = new TokenBucket(
         db,
         "token_bucket",
-        capacity: 10,
-        refillTokens: 10,
-        refillInterval: TimeSpan.FromSeconds(30)
+        capacity: 15,
+        refillTokens: 15,
+        refillInterval: TimeSpan.FromSeconds(10)
     );
 
     // Start a background task to refill the bucket at the specified interval
@@ -29,21 +29,23 @@ try
     });
 
     // Number of worker threads to simulate
-    int threadCount = 50;
+    int threadCount = 5;
     var tasks = new Task[threadCount];
     for (int i = 0; i < threadCount; i++)
     {
         int threadId = i;
-        // Each worker tries to consume tokens 10 times
+        // Each worker tries to consume tokens
         tasks[i] = Task.Run(async () =>
         {
-            for (int j = 0; j < 1000; j++)
+            for (int j = 0; j < 10; j++)
             {
                 // Try to consume 1 token from the bucket
                 bool success = await bucket.TryConsumeAsync(1);
-                // Format threadId as two digits (e.g., 01, 02, ...)
-                Console.WriteLine($"Thread {threadId:D2}: {(success ? "Acquired token" : "")}");
-                await Task.Delay(3000); // Wait 3 seconds before next attempt
+
+                if(success)
+                    Console.WriteLine($"Thread {threadId:D2}: \"Acquired token\"");
+
+                await Task.Delay(2000); // Wait 3 seconds before next attempt
             }
         });
     }
