@@ -36,5 +36,27 @@ dotnet run
 - The Redis connection string is set to `localhost` by default in `Program.cs`.
 - Adjust the token bucket parameters (capacity, refill rate, etc.) in `Program.cs` as needed.
 
+
+## Running with Docker
+
+You can run both the application and Redis using Docker Compose. This is the recommended way for local development and testing.
+
+### 1. Build and start the containers
+```sh
+docker compose up --build
+```
+
+This will build the .NET app image and start both the app and a Redis server. The app will automatically connect to the Redis container using the hostname `redis`.
+
+### 2. Stopping the containers
+Press `Ctrl+C` to stop, then run:
+```sh
+docker compose down
+```
+
+### Notes
+- Make sure your connection string in `Program.cs` is set to `redis` (not `localhost`) when running in Docker Compose.
+- You need Docker and Docker Compose (or Docker Desktop) installed. On macOS, you can use Docker Desktop or Colima.
+
 ## License
 MIT

@@ -4,7 +4,7 @@ using StackExchange.Redis;
 try
 {
     // Connect to the local Redis server
-    var redis = await ConnectionMultiplexer.ConnectAsync("localhost");
+    var redis = await ConnectionMultiplexer.ConnectAsync("redis");
 
     // Get a Redis database instance
     var db = redis.GetDatabase();
@@ -43,7 +43,7 @@ try
                 bool success = await bucket.TryConsumeAsync(1);
                 // Format threadId as two digits (e.g., 01, 02, ...)
                 Console.WriteLine($"Thread {threadId:D2}: {(success ? "Acquired token" : "")}");
-                await Task.Delay(1000); // Wait 1 second before next attempt
+                await Task.Delay(3000); // Wait 3 seconds before next attempt
             }
         });
     }
